@@ -1,0 +1,1 @@
+/home/jaog/csgbd/postgresql-8.1.4/src/test/locale/de_DE.ISO8859-1/Makefile

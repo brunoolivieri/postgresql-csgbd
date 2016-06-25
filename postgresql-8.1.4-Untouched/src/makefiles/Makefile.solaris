@@ -1,0 +1,22 @@
+# $PostgreSQL: pgsql/src/makefiles/Makefile.solaris,v 1.12 2004/12/21 18:47:42 tgl Exp $
+
+AROPT = crs
+
+ifeq ($(with_gnu_ld), yes)
+export_dynamic = -Wl,-E
+rpath = -Wl,-rpath,$(rpathdir)
+else
+rpath = -Wl,-R$(rpathdir)
+endif
+
+DLSUFFIX = .so
+ifeq ($(GCC), yes)
+CFLAGS_SL = -fPIC
+else
+CFLAGS_SL = -KPIC
+endif
+
+%.so: %.o
+	$(LD) -G -Bdynamic -o $@ $<
+
+sqlmansect = 5sql

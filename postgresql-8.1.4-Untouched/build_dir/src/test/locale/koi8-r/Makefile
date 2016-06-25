@@ -1,0 +1,1 @@
+/home/jaog/csgbd/postgresql-8.1.4/src/test/locale/koi8-r/Makefile
